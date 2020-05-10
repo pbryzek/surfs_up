@@ -57,15 +57,31 @@ Utilized SQLAlchemy ORM to upload the hawaii.sqlite DB into code objects. With a
 
 ### Key Differences June, December Observed:
 1. The temperature ranges between June, December are (64-85)F, (56-83)F respectively. The difference in their ranges were (21, 27)F respectively. 
-- An outlier in June would be any temperature below XF or any temperature above YF.
-- An outlier in December would be any temperature below XF or any temperature above YF.
+- **June**
+- IQR(Q3 - Q1): (77 - 73) = 4
+- 1.5 IQR: 1.5 * 4 = 6
+- An outlier in June would be any temperature below 67F or any temperature above 83F.
+- **December**
+- IQR(Q3 - Q1): (74 - 69) = 5
+- 1.5 IQR: 1.5 * 5 = 7.5
+- An outlier in December would be any temperature below 61.5F or any temperature above 81.5F.
 
-2. The precipitation ranges between June, December are (64-85)F, (56-83)F respectively. The difference in their ranges were (21, 27)F respectively. An outlier in June would be any precipitation below XF or any precipitation above YF.
-- An outlier in June would be any precipitation below XF or any precipitation above YF.
-- An outlier in December would be any precipitation below XF or any precipitation above YF.
+2. The precipitation ranges between June, December are (4.43-0)in, (6.42-0)in respectively. The difference in their ranges were (4.43, 6.42)in respectively. 
+ **June**
+- IQR(Q3 - Q1): (0.12 - 0) = 0.12
+- 1.5 IQR: 1.5 * 0.12 = 0.18
+- An outlier in June would be any precipitation above 0.40in.
+- **December**
+- IQR(Q3 - Q1): (0.15 - 0) = 0.15
+- 1.5 IQR: 1.5* 0.15 = .225
+- An outlier in December would be any precipitation above 0.375in.
 
-3. 
+3. Looking at the differences in temperatures between June and December, we can see that temperatures in June have a higher max and a higher min than those of December. The IQR for June is 4 and it is 5 for Dec, showing a greater variation in temperatures in Dec than in June. Any temperature below 67F or above 83F in June would be considered a statistical outlier; any temperature below 61.5F or above 81.5F in Dec would also be considered outliers.
+
+4. For June an outlier is any day with precipitation over .40in and .375in for Dec. For both months, the 25% (Q1) were both 0 - these data points indicate that both months had a lot of days with 0in precipitation, allowing for outliers to occur at a relatively modest number of inches for both months. Dec showed a higher range of precipitation with it's Q3 .03in higher than June's Q3 and it's max was 6.42in while June's was 4.43in.
+
 ### Further Analysis
 1. One area that this dataset is lacking is that it only provide one calendar year of data. It would not be possible be make high degree of accuracy as to whether or not these data points collected in June and December were reflect of normal conditions as displayed by trends over time, or if they were reflecting an anomaly for the year analyzed. In order to properly analyze this year of data in its correct context, we would request high level statistics (mean, standard deviation, median, 25%, 75% etc) as returned by the describe method on a year by year basis. Providing visual representation of the yearly dataset would provide high level contextual information.
 2. A second limitation is that we are only taking into consideration two months of data, June and December - months that are more or less opposite of one another: Summer and Winter. It would be useful to analyze the other Summer months to properly benchmark June's data against July and August, likewise December against January and February. Knowing the statistics of the other Summer months and Winter months would allow us to know if June's and December's performances were indicative of normal trends in their respective season or if they were displaying unexpected behavior.
 3. Thirdly, it would be useful to analyze the seasons of Fall and Spring, again with segmenting the data into individual months - so that we could not only benchmark June and December against their season's metrics, but furthermore how their season statistics compare to the other seasons and overall yearly averages. By only looking at June and December we are only gaining a sliver of the underlying dataset. 
+4. This analysis did not require the calculation of median nor mode - it would be enlightening to know more about the distribution of precipitation across the months, it would be useful to know the number of days the precipitation > 0 throughout that month. If the month did not have many rainy days, the mode of that month would be expected to be 0.
