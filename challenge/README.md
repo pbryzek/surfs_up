@@ -6,6 +6,9 @@ Bootcamp Challenge 9: Module surfs_up
 ### Jupyter Notebooks Created
 - [climate_analysis](climate_analysis.ipynb)
 
+### Dataset Used
+- [hawaii.sqlite](https://courses.bootcampspot.com/courses/140/files/36846/download?wrap=1)
+
 ### Challenge Description
 The goals of this challenge are for you to:
 - Determine key statistical data about the month of June.
