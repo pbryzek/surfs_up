@@ -21,7 +21,7 @@ The goals of this challenge are for you to:
 Utilized SQLAlchemy ORM to upload the hawaii.sqlite DB into code objects. With an initial start_date of 2017-08-23, using code to get a date of exactly 365 days prior to the start_date
 
 ### June describe() Statistics
-#### *Precipitation	Temperature*
+- *Precipitation	Temperature*
 - count	1574.000000	1700.000000
 - mean	0.136360	74.944118
 - std	0.335731	3.257417
@@ -32,7 +32,7 @@ Utilized SQLAlchemy ORM to upload the hawaii.sqlite DB into code objects. With a
 - max	4.430000	85.000000
 
 ### December describe() Statistics
-#### *Precipitation	Temperature*
+- *Precipitation Temperature*
 - count	1405.000000	1517.000000
 - mean	0.216819	71.041529
 - std	0.541399	3.745920
